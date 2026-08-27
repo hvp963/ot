@@ -28,3 +28,6 @@ next-env.d.ts
 # sensitive source material — real names, internal politics, negotiation strategy
 # never commit this to any remote; kept local only
 input/
+
+.vercel
+.env*

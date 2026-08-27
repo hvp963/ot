@@ -6,6 +6,7 @@ import CrosswalkTable from "@/components/CrosswalkTable";
 import Callout from "@/components/Callout";
 import FlowDiagram from "@/components/FlowDiagram";
 import HighlightedText from "@/components/HighlightedText";
+import ProtectedImage from "@/components/ProtectedImage";
 import sections from "@/data/sections.json";
 import architecture from "@/data/architecture.json";
 
@@ -111,26 +112,20 @@ export default function AppendixPage() {
           <p className="text-base leading-relaxed c-muted mb-6">{workSample.evolutionNote}</p>
           <div className="space-y-6">
             <figure className="card p-3">
-              <img
+              <ProtectedImage
                 src="/diagrams/architecture-evolution-summary6.png"
                 alt="Where the three architectures actually diverge"
                 className="w-full rounded-lg border border-base select-none"
-                onContextMenu={(e) => e.preventDefault()}
-                onDragStart={(e) => e.preventDefault()}
-                draggable={false}
               />
               <figcaption className="text-base c-dim mt-2 px-2">
                 Where the three architectures diverge: traditional ML, current-generation GenAI, and agentic orchestration.
               </figcaption>
             </figure>
             <figure className="card p-3">
-              <img
+              <ProtectedImage
                 src="/diagrams/architecture-evolution-details6.png"
                 alt="Full architecture evolution matrix"
                 className="w-full rounded-lg border border-base select-none"
-                onContextMenu={(e) => e.preventDefault()}
-                onDragStart={(e) => e.preventDefault()}
-                draggable={false}
               />
               <figcaption className="text-base c-dim mt-2 px-2">
                 The full evolution matrix: sixteen capability rows.
