@@ -1,0 +1,52 @@
+{
+  "businessCase": {
+    "eyebrow": "Business case",
+    "heading": "No company has grown a new market without a parallel structure",
+    "paragraphs": [
+      "Every enterprise that has captured a genuinely new market while defending its existing one has done it the same way: a small, fast-moving team building the new thing runs alongside the organization sustaining the old one, connected but not merged. eBay building PayPal. Adobe moving from desktop software through cloud, data, and now AI. The pattern holds because the two efforts optimize for different things: the existing business for reliability and scale, the new business for speed and validated learning. Forcing one operating model to serve both slows both down.",
+      "OneTrust is at that inflection point now. The company is building its next business, AI Platform & Emerging Products, while continuing to grow and modernize the current one, Core Platform & Solutions. Both matter. Both need a different operating rhythm.",
+      "The AI Platform ambition is real and specific: a path toward $400M+ in annual revenue, with an intermediate scaling target of $10M to $100M+ in AI-driven revenue within 24 months. Reaching that target requires more than a roadmap. It requires a team that can design, build, and validate at the pace the market is moving."
+    ],
+    "flows": [
+      {
+        "title": "Building the next business",
+        "steps": ["Ideation", "Product", "AEP", "Customer Validation", "Scale", "Evolution"]
+      },
+      {
+        "title": "Growing the current business",
+        "steps": ["Ideation", "Product", "CPS + AEP", "Customer Validation", "Scale"]
+      }
+    ],
+    "closing": "AEP accelerates the first flow while strengthening the second. As new capabilities mature, operational ownership transitions to CPS: the AI Platform function stays focused on what comes next, and the core platform inherits proven, production-ready capability instead of an unfinished experiment."
+  },
+  "scaleProposal": {
+    "eyebrow": "Scale target",
+    "heading": "$10M to $100M+ in 24 months",
+    "intro": "AI governance is consolidating fast. IBM, Microsoft, the major cloud providers, and workflow platforms are all expanding into governance capability. Competing at enterprise scale requires more than documentation workflows: lifecycle integration, operational enforcement, and portfolio-level oversight built into the platform itself.",
+    "milestones": [
+      {
+        "period": "First 6 months",
+        "items": ["Model registry integrations", "Unified AI asset inventory", "Risk classification engine", "Telemetry-ready governance foundation"]
+      },
+      {
+        "period": "Second 6 months",
+        "items": ["Event-driven governance triggers", "Telemetry ingestion", "EU AI Act accelerator", "Executive AI oversight dashboard"],
+        "target": "Year 1 objective: $30–40M ARR"
+      },
+      {
+        "period": "Months 12–18",
+        "items": ["Continuous AI risk monitoring", "Policy-aware enforcement", "Cross-model lineage", "Vertical governance bundles"]
+      },
+      {
+        "period": "Months 18–24",
+        "items": ["Cross-enterprise AI portfolio governance", "Tiered enterprise pricing", "Multi-year enterprise contracts", "Standardized lifecycle framework"],
+        "target": "Year 2 objective: $100M+ ARR"
+      }
+    ],
+    "governanceGraph": {
+      "heading": "Forward architecture: a governance graph",
+      "description": "Customers, data assets, AI models, policies, risk classifications, regulations, and third parties as one connected graph. Every entity governed, every relationship traceable. This is the structural idea behind the Context Layer detailed in the technical architecture section.",
+      "outcomes": ["Cross-entity risk tracing", "Regulatory exposure mapping", "AI impact visibility", "Executive-level reporting"]
+    }
+  }
+}

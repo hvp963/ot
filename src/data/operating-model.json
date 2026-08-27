@@ -1,0 +1,34 @@
+{
+  "heading": "One role, spanning both organizations",
+  "intro": "DV asked for a builder with zero friction from the broader organization, and a change agent who transforms the existing team. Sriram asked to build an AI-first product inside his remit. A single role serves both asks at once, structured as two connected responsibilities.",
+  "responsibilities": [
+    {
+      "id": "build",
+      "label": "Build",
+      "title": "In Sriram's organization",
+      "reportingLine": "Direct report to Sriram, SVP & GM, AI",
+      "summary": "HP brings thoughts to life; owns every decision behind a real, new AI-first product shipped to customers. This is the builder-and-solver DV described.",
+      "points": [
+        "Decisions and implementation happen together: zero organizational distance between product strategy and what gets built",
+        "Architecture is built and shipped by the same team from day one, carried through by that team end to end",
+        "Matches the operating model OneTrust needs for a $400M new-business bet: startup pace inside an enterprise"
+      ]
+    },
+    {
+      "id": "bridge",
+      "label": "Bridge / Change Agent",
+      "title": "Inside DV's organization",
+      "reportingLine": "Dual or dotted-line direct report to DV, CPTO",
+      "summary": "HP is the change agent DV asked for, with ownership of overall architecture and the engineering of the AI Context Layer.",
+      "points": [
+        "Direct working relationship into the full breadth of the existing platform and its engineering teams",
+        "Transformation grounded in real, shipped work from the AI Context Layer, spanning architecture and engineering both",
+        "Answers DV's ask to build, change, and scale the organization. Demonstrated through shipped work in production."
+      ]
+    }
+  ],
+  "closing": {
+    "text": "Two organizational lines, one accountable person, one execution model. A single-org version of this role gives up one of the three asks: DV's builder-and-solver, DV's change agent, or Sriram's integrated function. Once the product and its foundation are built out, this role finds its natural place in the business as the business evolves.",
+    "bold": ["one accountable person", "one execution model", "builder-and-solver", "change agent", "integrated function"]
+  }
+}

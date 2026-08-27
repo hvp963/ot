@@ -1,0 +1,95 @@
+{
+  "adobe": {
+    "org": "Adobe",
+    "role": "Architected and led engineering for Adobe's global product data and intelligence platform",
+    "scale": [
+      { "label": "Applications on the platform", "value": "1,500+" },
+      { "label": "Users served", "value": "500M+" },
+      { "label": "Daily interactions", "value": "140B+" },
+      { "label": "Data lake", "value": "90PB+" },
+      { "label": "Objects tracked", "value": "300 trillion" },
+      { "label": "Daily ingestion", "value": "100TB+" }
+    ],
+    "business": [
+      { "label": "Revenue growth over the period", "value": "$4B → $19B+" },
+      { "label": "Infrastructure budget owned", "value": "~$20M" },
+      { "label": "Cost optimized from that budget", "value": "~$5M" },
+      { "label": "Incremental impact from platform-enabled experimentation", "value": "$150M+" },
+      { "label": "ARR through platform-enabled analytics", "value": "$110M" }
+    ],
+    "narrative": "Firefly, Express, Photoshop, and Content Authenticity Initiative products were brought under one shared architecture and data standard, serving roughly 30,000 engineers, product managers, and designers. The platform carried GDPR, CCPA, and DSA governance requirements, plus CAI/C2PA content provenance, as first-class engineering constraints rather than a compliance layer bolted on afterward."
+  },
+  "silverLabs": {
+    "org": "Silver Labs",
+    "role": "Chief Architect and SVP of Engineering, Platform, for an enterprise generative AI platform",
+    "scale": [
+      { "label": "Videos produced", "value": "400K+" },
+      { "label": "Integrations", "value": "80+" },
+      { "label": "Distribution channels", "value": "15" },
+      { "label": "Viewers reached", "value": "1B+" },
+      { "label": "Platform reliability", "value": "99.999%" }
+    ],
+    "business": [
+      { "label": "Output inconsistency reduced", "value": "97%" },
+      { "label": "Production time reduced", "value": "~4h → ~20m (12x)" },
+      { "label": "Regeneration rate reduced", "value": "50%" },
+      { "label": "Manual intervention reduced", "value": "75%" }
+    ],
+    "narrative": "The core engineering problem was building deterministic control layers over a probabilistic AI system: multimodal generation and voice synthesis needed enterprise-grade consistency at production reliability. The result was a production system trusted to run at scale with predictable behavior, plus an internal Engineering OS pairing engineers with AI agents on a shared, governed workflow."
+  },
+  "whitePaper": {
+    "title": "AI-IDS: an Intrusion Detection System pattern for AI-native platforms",
+    "venue": "In submission to arXiv (Cornell)",
+    "summary": "The paper formalizes a pattern for governing AI systems the way network security governs infrastructure: explicit, versioned specifications for what an AI task is allowed to do, deterministic harness code that enforces those boundaries, and continuous detection of behavior that drifts outside them. It treats AI governance as an architectural property enforced in code at deployment time.",
+    "relevance": "Directly applicable to OneTrust's AI Governance wedge: the same discipline that keeps an AI-native platform's own agents auditable is the discipline the platform needs to sell to customers governing their AI systems."
+  },
+  "engineeringOS": {
+    "title": "Engineering OS",
+    "summary": "A published set of engineering standards and Claude Code skills covering architecture principles, coding standards, API and database design, security, observability, testing, and documentation. Applied consistently across every project referenced in this app, including this one.",
+    "relevance": "Demonstrates the operating discipline behind the build claims in this app: every project bootstraps against the same checkpoint table, so architecture decisions are enforced at the moment code is written."
+  },
+  "profile": {
+    "title": "Profile & Experiences",
+    "href": "/references/hvp-profiles.pdf"
+  },
+  "references": {
+    "eyebrow": "In their own words",
+    "heading": "References",
+    "intro": "Unsolicited notes from people who worked alongside this work, at Adobe and at Silver Labs.",
+    "items": [
+      {
+        "quote": "As we finish the successful roll-out of NUJ M2, I wanted to extend my heartfelt appreciation for your heavy-weight contribution to this complex cross-team project. You were the pivot around which different surfaces revolved. Individually, you have been a superman: working round the clock and always available to resolve issues for your team and every team. The way you interact with an SVP or an individual IC, your tone doesn't change, and that truly reflects your character.",
+        "author": "Ankit",
+        "detail": "cross-surface product launch personalized experiences",
+        "company": "Adobe",
+        "date": "April 2023"
+      },
+      {
+        "quote": "I honestly don't have words to describe the kindness, thoughtfulness, respect, openness, collaboration, motivation, and energy that he brings to any subject, conversation, and meeting. He is an incredible person who inspires and uplifts you. As a side note, independent of his product/technical competence, he is gifted with negotiating skills that have helped us save on external vendor contracts. He is one of the reasons why Adobe is such an incredible place to be.",
+        "author": "Nicole",
+        "detail": "unsolicited to Chief People Officer",
+        "company": "Adobe",
+        "date": "November 2023"
+      },
+      {
+        "quote": "I have been fortunate to work with Haresh on business-critical use cases that delivered $5M in monthly incremental ARR, and we couldn't have done it without his direct contributions, guidance, and technical expertise. A core competency I have noticed in him is getting hands-on by going deep into a problem and resolving it, when his team or others across the company have struggled to. He does it with a flair that makes everyone feel involved and appreciated, a rare quality, and is the type of leader you can count on to keep a cool head under pressure while encouraging everyone around him.",
+        "author": "Suyash",
+        "detail": "Product & Marketing, Creative & Experience Cloud",
+        "company": "Adobe",
+        "date": "January 2024"
+      },
+      {
+        "quote": "The singular drive behind this transformation is Haresh. His inspire, motivate, and influence approach, combined with his hands-on involvement across product, engineering, and architecture, as well as execution, innovation, and scale, has been shaping leadership across the team. His continued push on the deep integration of AI, now moving towards Agentic AI, is driving the team beyond incremental thinking.",
+        "author": "Harshiny",
+        "detail": "on behalf of the AI, Platform & Engineering team",
+        "company": "Silver Labs",
+        "date": "April 2026"
+      }
+    ],
+    "moreNote": "Additional testimonials from Adobe partner teams, spanning platform reliability, cross-team delivery, and revenue impact, available on request.",
+    "titleCaptions": [
+      { "title": "Head of Data, Intelligence Platforms & Principal Scientist, Adobe" },
+      { "title": "Chief Architect, SVP of Engineering, Platforms, AI/Data, Silver Labs" }
+    ]
+  }
+}

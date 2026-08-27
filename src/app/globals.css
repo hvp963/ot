@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Archivo:wght@500..800&display=swap');
+
+@import "tailwindcss";
+
+/*
+ * Design tokens inherited from asset-intelligence (C:\data-code\git\asset-intelligence),
+ * copied verbatim per the design-system skill's Inheritance rule. Project-specific classes
+ * are added below the "Project-specific" divider and reference the same custom properties.
+ */
+
+:root {
+  --bg:            #f0f4f9;
+  --surface:       #ffffff;
+  --surface-2:     #f8fafc;
+  --surface-3:     #f1f5f9;
+  --border:        #e2e8f0;
+  --border-bright: #cbd5e1;
+  --text:          #0f172a;
+  --text-muted:    #64748b;
+  --text-dim:      #94a3b8;
+  --primary:       #0284c7;
+  --primary-light: #0ea5e9;
+  --primary-glow:  color-mix(in srgb, var(--primary) 10%, transparent);
+  --indigo:        #6366f1;
+  --indigo-glow:   color-mix(in srgb, var(--indigo) 10%, transparent);
+  --cyan:          #0891b2;
+  --cyan-glow:     color-mix(in srgb, var(--cyan) 8%, transparent);
+  --green:         #059669;
+  --amber:         #d97706;
+  --red:           #dc2626;
+  --shadow-sm:     0 1px 3px rgba(15,23,42,0.08), 0 1px 2px rgba(15,23,42,0.04);
+  --shadow-md:     0 4px 12px rgba(15,23,42,0.08), 0 2px 4px rgba(15,23,42,0.04);
+}
+
+@layer base {
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--surface-2); }
+::-webkit-scrollbar-thumb { background: var(--border-bright); border-radius: 3px; }
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium text-white transition-all;
+    background: var(--primary);
+    box-shadow: 0 1px 3px color-mix(in srgb, var(--primary) 25%, transparent);
+  }
+  .btn-primary:hover { background: var(--primary-light); box-shadow: 0 2px 8px color-mix(in srgb, var(--primary) 30%, transparent); }
+  .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all;
+    color: var(--text-muted);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
+  }
+  .btn-ghost:hover { color: var(--text); border-color: var(--border-bright); background: var(--surface-2); }
+
+  .btn-icon {
+    @apply inline-flex items-center justify-center w-8 h-8 rounded-lg transition-all;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .btn-icon:hover { color: var(--primary); border-color: color-mix(in srgb, var(--primary) 30%, transparent); }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
+    @apply rounded-xl;
+  }
+
+  .card-hover { @apply transition-all duration-200; }
+  .card-hover:hover { border-color: var(--border-bright); box-shadow: var(--shadow-md); transform: translateY(-1px); }
+
+  .card-link {
+    @apply block transition-all duration-200;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+  }
+  .card-link:hover { border-color: var(--border-bright); box-shadow: var(--shadow-md); transform: translateY(-1px); }
+
+  .badge { @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium; }
+
+  .divider { border-top: 1px solid var(--border); }
+
+  .tab-btn {
+    @apply px-4 py-2 text-sm font-medium rounded-lg transition-all;
+    color: var(--text-muted);
+  }
+  .tab-btn:hover { color: var(--text); background: var(--surface-2); }
+  .tab-btn.active { color: var(--primary); background: color-mix(in srgb, var(--primary) 8%, transparent); font-weight: 600; }
+}
+
+@layer utilities {
+  .animate-fade-in { animation: fadeIn 0.25s ease-out; }
+
+  .c-text    { color: var(--text); }
+  .c-muted   { color: var(--text-muted); }
+  .c-dim     { color: var(--text-dim); }
+  .c-green   { color: var(--green); }
+  .c-amber   { color: var(--amber); }
+  .c-red     { color: var(--red); }
+  .c-primary { color: var(--primary); }
+  .c-indigo  { color: var(--indigo); }
+  .c-cyan    { color: var(--cyan); }
+
+  .bg-surface   { background: var(--surface); }
+  .bg-surface-2 { background: var(--surface-2); }
+  .bg-surface-3 { background: var(--surface-3); }
+  .bg-border    { background: var(--border); }
+
+  .bg-green   { background: var(--green); }
+  .bg-amber   { background: var(--amber); }
+  .bg-red     { background: var(--red); }
+  .bg-primary { background: var(--primary); }
+  .bg-indigo  { background: var(--indigo); }
+  .bg-cyan    { background: var(--cyan); }
+
+  .bg-green-soft   { background: color-mix(in srgb, var(--green)   12%, transparent); }
+  .bg-amber-soft   { background: color-mix(in srgb, var(--amber)   12%, transparent); }
+  .bg-red-soft     { background: color-mix(in srgb, var(--red)     12%, transparent); }
+  .bg-primary-soft { background: color-mix(in srgb, var(--primary) 12%, transparent); }
+  .bg-indigo-soft  { background: color-mix(in srgb, var(--indigo)  12%, transparent); }
+  .bg-cyan-soft    { background: color-mix(in srgb, var(--cyan)    12%, transparent); }
+  .bg-primary-tint { background: color-mix(in srgb, var(--primary)  5%, var(--surface)); }
+
+  .border-base   { border-color: var(--border); }
+  .border-bright { border-color: var(--border-bright); }
+  .border-dim    { border-color: var(--text-dim); }
+  .border-faint  { border-color: color-mix(in srgb, var(--border) 50%, transparent); }
+  .divide-faint > * + * { border-top: 1px solid color-mix(in srgb, var(--border) 50%, transparent); }
+
+  .border-green-soft  { border-color: color-mix(in srgb, var(--green)  30%, transparent); }
+  .border-amber-soft  { border-color: color-mix(in srgb, var(--amber)  30%, transparent); }
+  .border-red-soft    { border-color: color-mix(in srgb, var(--red)    30%, transparent); }
+  .border-indigo-soft { border-color: color-mix(in srgb, var(--indigo) 30%, transparent); }
+  .border-primary-soft { border-color: color-mix(in srgb, var(--primary) 30%, transparent); }
+
+  .bt-primary { border-top: 3px solid var(--primary); }
+  .bt-green   { border-top: 3px solid var(--green); }
+  .bt-amber   { border-top: 3px solid var(--amber); }
+  .bt-red     { border-top: 3px solid var(--red); }
+  .bt-indigo  { border-top: 3px solid var(--indigo); }
+  .bt-cyan    { border-top: 3px solid var(--cyan); }
+
+  .bl-green      { border-left: 3px solid var(--green); }
+  .bl-amber      { border-left: 3px solid var(--amber); }
+  .bl-red        { border-left: 3px solid var(--red); }
+  .bl-primary    { border-left: 3px solid var(--primary); }
+  .bl-indigo     { border-left: 3px solid var(--indigo); }
+  .bl-cyan       { border-left: 3px solid var(--cyan); }
+  .bl-primary-lg { border-left: 4px solid var(--primary); }
+
+  .svg-ring       { transform: rotate(-90deg); }
+  .ring-animation { transition: stroke-dashoffset 0.6s ease; }
+}
+
+@media print {
+  .no-print { display: none !important; }
+  body { height: auto; overflow: visible; background: #fff; }
+  body > main { overflow: visible; height: auto; }
+  .card, .card-link { box-shadow: none !important; break-inside: avoid; }
+  a { color: inherit; text-decoration: none; }
+  .panzoom-canvas { height: auto !important; overflow: visible !important; }
+  .panzoom-content { position: static !important; transform: none !important; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   Project-specific — this app only. References the tokens above; no new
+   colors introduced.
+   ══════════════════════════════════════════════════════════════════════ */
+
+/* ══════════════════════════════════════════════════════════════════════
+   Two-size type system (HP directive, 2026-08-26): every heading in the
+   app is HEADING_SIZE, every paragraph/list/label is BODY_SIZE. Hierarchy
+   comes from weight, color, and letter-spacing, never a third font size.
+   The one deliberate exception is .stat-number: large KPI figures (Adobe
+   / Silver Labs metrics) are a data display, not a text-hierarchy level.
+   ══════════════════════════════════════════════════════════════════════ */
+
+.font-display { font-family: 'Archivo', 'DM Sans', system-ui, sans-serif; }
+
+.hero-eyebrow {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  @apply text-base font-semibold uppercase tracking-wider;
+  color: var(--primary);
+  letter-spacing: 0.06em;
+}
+
+.hero-title {
+  font-family: 'Archivo', 'DM Sans', system-ui, sans-serif;
+  @apply text-[28px] md:text-[32px] font-medium leading-tight;
+  color: var(--text);
+}
+
+.section-eyebrow {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  @apply text-base font-semibold uppercase tracking-wider mb-2;
+  color: var(--text-dim);
+  letter-spacing: 0.06em;
+}
+
+.section-heading {
+  font-family: 'Archivo', 'DM Sans', system-ui, sans-serif;
+  @apply text-[28px] md:text-[32px] font-medium;
+  color: var(--text);
+}
+
+.prose-lede {
+  @apply text-base leading-relaxed font-medium;
+  color: var(--text-muted);
+}
+
+.stat-number {
+  font-family: 'Archivo', 'DM Sans', system-ui, sans-serif;
+  @apply text-3xl md:text-4xl font-normal tabular-nums;
+  color: var(--text);
+}
+
+.nav-rail-item {
+  @apply flex items-center gap-3 px-3 py-2.5 rounded-lg text-base font-medium transition-all;
+  color: var(--text-muted);
+}
+.nav-rail-item:hover { color: var(--text); background: var(--surface-2); }
+.nav-rail-item.active {
+  color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 8%, transparent);
+  font-weight: 600;
+}
+
+.timeline-rail {
+  border-left: 2px solid var(--border);
+}
+
+.recommended-ring {
+  box-shadow: 0 0 0 2px var(--primary), var(--shadow-md);
+}

@@ -1,0 +1,20 @@
+{
+  "eyebrow": "Point of view",
+  "heading": "Why dual reporting",
+  "paragraphs": [
+    "Organizational boundaries define customer value, product direction, and where innovation gets built, intentionally or by default. Splitting Build and Bridge across two people recreates the handoff this proposal removes: architecture decided in one org, implemented in another, with a review gate in between."
+  ],
+  "devLifecycle": {
+    "eyebrow": "DV's question at closing of discussions",
+    "heading": "Will the development lifecycle change?",
+    "paragraphs": [
+      "Yes, on a timeline that depends on the goal of a company. BMAD-style structured workflows can meaningfully move a team from where AI-assisted development was a year ago to where it is today over the next two to three years.",
+      "However, staying ahead of the curve is a different bet, closer to what Kiro and similar agentic-first development models are designed for. The right choice depends on which race OneTrust intends to run."
+    ]
+  },
+  "close": {
+    "eyebrow": "In summary",
+    "heading": "The role, in one sentence",
+    "statement": "One role, spanning both organizations: building inside Sriram's team, bridging DV's transformation, and finding its natural place in the business as the business evolves."
+  }
+}

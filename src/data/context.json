@@ -1,0 +1,38 @@
+{
+  "hero": {
+    "eyebrow": "OneTrust — AI Platform & Emerging Products",
+    "title": "Building the next business without slowing down the current one",
+    "lede": "Context from Sriram and DV, and what a parallel build function makes possible.",
+    "author": "Haresh Parekh"
+  },
+  "context": {
+    "eyebrow": "What Sriram and DV asked",
+    "heading": "What each conversation asked for",
+    "intro": "OneTrust is building its next business while transforming its current one. Sriram leads that next business as SVP & GM of AI. DV leads Engineering & Product across the business as CPTO, with Sriram's function reporting into his organization today. Both conversations asked the same structural question: what does it take to build a new platform capability fast, without slowing down the business already in motion.",
+    "sriram": {
+      "heading": "Sriram: business case",
+      "points": [
+        "Charter: strategy, product, pricing, and GM responsibility for AI Platform & Emerging Products, with a path toward $400M+ in annual revenue.",
+        "The premise: the current business, Core Platform & Solutions (CPS), and the next business, AI Platform & Emerging Products (AEP), solve different problems and need different operating models. One sustains and scales, the other validates and builds fast.",
+        "Wants a lean, all-inclusive function inside his remit that takes an idea to a working product customers can validate, with no organizational friction in between, and lays the foundation the future business gets built on."
+      ]
+    },
+    "dv": {
+      "heading": "DV: two pillars",
+      "points": [
+        "Builder and solver: someone who can operate independently, with a small team, with zero friction from the broader organization.",
+        "Change agent: someone who owns architecture across the business and the control layer, gets the existing team ramped up, and shows what's actually possible, at the pace of innovation and execution.",
+        "Wants experience and maturity: a track record of solving problems that look impossible, the ability to operate with pace and self-driven iteration, and the ability to influence and take ownership beyond a narrow lane."
+      ]
+    },
+    "closing": "Both point to the same answer: architecture and engineering need to be one function during the formative stage of a new platform, designing and shipping together instead of handing decisions across an organizational boundary."
+  },
+  "experience": {
+    "eyebrow": "What a parallel build function makes possible",
+    "heading": "No company has grown a new market without a parallel entity or team",
+    "paragraphs": [
+      "Every company that has captured a genuinely new market while defending its existing one has done it the same way: a small, fast-moving team building the new thing runs alongside the organization sustaining the old one, connected but not merged. eBay building PayPal. Adobe moving from desktop software through cloud, data, and now AI. The pattern holds because the two efforts optimize for different things: the existing business for reliability and scale, the new business for speed and validated learning. Forcing one operating model to serve both slows both down.",
+      "The evidence below is two platforms built this way, at meaningful scale, with the numbers to show for it."
+    ]
+  }
+}

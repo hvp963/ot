@@ -1,0 +1,29 @@
+{
+  "intro": {
+    "eyebrow": "Technical architecture",
+    "heading": "From marketecture to running system",
+    "paragraphs": [
+      "OneTrust's AI Governance wedge, as Sriram has framed it, is Platform + Solutions: detect(), assess(), act(), attest() running on a Trust Graph. The documents below are one engineer's answer to a specific question: what does that actually take to build, layer by layer, from the customer-facing surface down to the cloud foundation.",
+      "The functional architecture is OneTrust-specific, built from the high level discussion that Sriram has presented. The technical architecture is a work sample: Asset Intelligence, a production system built on the same architectural pattern this proposal is built on."
+    ]
+  },
+  "functional": {
+    "eyebrow": "Functional architecture",
+    "heading": "OneTrust — CPS + AEP",
+    "description": "Seven layers, two functions tagged explicitly: CPS (Core Platform & Solutions) for what exists in production today, AEP (AI Platform & Emerging Products) for what the new business builds, plus a stable facade contract where both sides meet and hand off work without either blocking the other or duplicating effort. Every layer traces back to a capability from the high level discussion with Sriram.",
+    "links": [
+      { "label": "Marketecture → Functional Architecture bridge", "file": "/diagrams/marketecture-bridge.png", "note": "Crosswalk from Sriram's product language to the engineering layer to the customer capability" },
+      { "label": "Functional Architecture — full diagram", "file": "/diagrams/functional-architecture.png", "note": "All 7 layers: CPS Enterprise Solutions through the Dual Cloud & Platform Foundation" },
+      { "label": "AEP Detail Architecture — module level", "file": "/diagrams/aep-detail.png", "note": "Every module from the Context Layer and Decision & Intelligence Layer, expanded into sub-components" }
+    ]
+  },
+  "technical": {
+    "eyebrow": "Technical architecture — work sample",
+    "heading": "Asset Intelligence (Stealth Mode)",
+    "description": "A production system scoring media assets against brand, brief, and provenance requirements. Built on the same architecture pattern proposed for OneTrust's Context Layer: a foundation-model API called through typed, structured tool contracts, an orchestrator, and a closed evaluation loop. Sriram's vision for detect(), assess(), act(), attest() rests on the same core principles this platform was built on.",
+    "links": [
+      { "label": "Architecture evolution — highlights", "file": "/diagrams/architecture-evolution-summary6.png", "note": "Where traditional ML, current-generation GenAI, and agentic orchestration diverge, across 6 core capabilities" },
+      { "label": "Architecture evolution — full matrix", "file": "/diagrams/architecture-evolution-details6.png", "note": "The complete 16-row matrix, from model serving through evaluation and governance" }
+    ]
+  }
+}

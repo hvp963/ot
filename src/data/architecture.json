@@ -1,0 +1,279 @@
+{
+  "intro": {
+    "eyebrow": "Technical architecture",
+    "heading": "From marketecture to running system",
+    "paragraphs": [
+      "OneTrust's AI Governance wedge, as Sriram has framed it, is Platform + Solutions: detect(), assess(), act(), attest() running on a Trust Graph. The functional architecture below is one engineer's answer to a specific question: what does that actually take to build, layer by layer, from the customer-facing surface down to the cloud foundation.",
+      "Seven layers. Two functions tagged explicitly: CPS (Core Platform & Solutions) for what exists in production today, AEP (AI Platform & Emerging Products) for what the new business builds, plus a stable facade contract where both sides meet and hand off work without either blocking the other or duplicating effort."
+    ]
+  },
+  "layers": [
+    {
+      "id": "l1",
+      "number": "1",
+      "owner": "CPS",
+      "title": "CPS Enterprise Solutions",
+      "description": "The customer-facing solution suite in production today.",
+      "modules": ["Privacy Automation", "Consent & Preferences", "Third-Party / Vendor Risk", "Data Governance", "AI Governance", "Assessments & GRC"]
+    },
+    {
+      "id": "l2",
+      "number": "2",
+      "owner": "CPS",
+      "title": "CPS Experience & Developer Surface",
+      "description": "How customers and partners reach every solution.",
+      "modules": ["Unified UX / Admin", "REST & GraphQL APIs", "SDKs / CLI", "Event APIs & Webhooks", "Marketplace & Partner Apps"]
+    },
+    {
+      "id": "l3",
+      "number": "3",
+      "owner": "Dual",
+      "title": "Dual Enterprise Capability Facade",
+      "description": "A stable contract implemented by both CPS and AEP. Business services consume capabilities through this contract, which is what lets the two organizations evolve independently without breaking each other.",
+      "modules": ["Identity", "Policy", "Workflow", "Knowledge", "Search", "Events & Notifications", "Audit & Evidence", "Context API"]
+    },
+    {
+      "id": "l4a",
+      "number": "4A",
+      "owner": "AEP",
+      "title": "AEP Enterprise Context Layer",
+      "description": "The proposed area of direct ownership. Unifies identity, meaning, and policy across every silo the platform touches, and serves it as governed, queryable context.",
+      "modules": [
+        {
+          "name": "Entity Resolution",
+          "tagline": "Unify identities across silos",
+          "components": [
+            { "name": "Match Engine", "detail": "Deterministic + probabilistic matching across sources.", "example": "Matches \"J. Smith\" in the HR system to \"Jane Smith\" in the CRM as one data subject." },
+            { "name": "Golden Record Builder", "detail": "Merges matched records into one canonical entity.", "example": "Builds one Vendor record from 3 duplicate entries created by separate onboarding forms." },
+            { "name": "Survivorship Rules", "detail": "Resolves conflicting attribute values.", "example": "Keeps the legal entity name from the contract system over a stale value in the CRM." },
+            { "name": "Identity Registry", "detail": "Stores resolved entity IDs and cross-references.", "example": "Maps a customer's 4 regional account IDs to one global entity ID." }
+          ]
+        },
+        {
+          "name": "Lineage & Provenance",
+          "tagline": "Every fact traceable to source",
+          "components": [
+            { "name": "Lineage Capture", "detail": "Records source, transform, and load steps per fact.", "example": "Tags a risk score as derived from \"Vendor Assessment v3, field Q12.\"" },
+            { "name": "Provenance Store", "detail": "Immutable log of fact origin and change history.", "example": "Shows a consent flag was set by the CMP webhook on a specific date." },
+            { "name": "Impact Analysis", "detail": "Traces downstream effects of a source change.", "example": "Flags 40 assessments that reference a regulation clause just amended." }
+          ]
+        },
+        {
+          "name": "Ontology & Semantic Layer",
+          "tagline": "Shared vocabulary across domains",
+          "components": [
+            { "name": "Domain Ontology", "detail": "Canonical business vocabulary and entity types.", "example": "Defines \"Processing Activity\" once, used consistently by Privacy and AI Governance." },
+            { "name": "Term Mapping", "detail": "Aligns solution-specific terms to shared vocabulary.", "example": "Maps \"Data Subject\" (Privacy) and \"End User\" (Consent) to the same entity type." },
+            { "name": "Schema Registry", "detail": "Versioned schemas for context objects.", "example": "Publishes v2 of the \"AI System\" context schema without breaking v1 consumers." }
+          ]
+        },
+        {
+          "name": "Knowledge Graph",
+          "tagline": "Entities + relationships",
+          "components": [
+            { "name": "Graph Store", "detail": "Entities and relationships, queryable at scale.", "example": "Stores Vendor → Processes → Dataset → Subject-to → Regulation as linked nodes." },
+            { "name": "Relationship Extractor", "detail": "Derives relationships from source data and events.", "example": "Infers a new Vendor-to-Subprocessor link from an updated DPA document." },
+            { "name": "Graph Query API", "detail": "Traversal and pattern-match queries.", "example": "Answers \"which AI systems touch EU customer data\" in one query." },
+            { "name": "Graph Refresh Pipeline", "detail": "Incremental updates from source changes.", "example": "Re-links a dataset when its owning team changes in the source system." }
+          ]
+        },
+        {
+          "name": "Policy / Trust Graph",
+          "tagline": "Obligations mapped to entities",
+          "components": [
+            { "name": "Obligation Mapper", "detail": "Links regulatory/policy obligations to entities.", "example": "Attaches GDPR Art. 35 (DPIA required) to any AI system tagged high-risk." },
+            { "name": "Trust Scoring", "detail": "Computes trust/risk posture per entity.", "example": "Scores a vendor lower after two missed evidence submissions." },
+            { "name": "Policy Change Propagation", "detail": "Updates the graph when a policy source changes.", "example": "Re-flags 12 vendors when a new state privacy law adds a data category." }
+          ]
+        },
+        {
+          "name": "Context Assembly API",
+          "tagline": "Serves governed context on demand",
+          "components": [
+            { "name": "Query Planner", "detail": "Resolves a context request into graph + store lookups.", "example": "Plans the lookups needed to answer \"assess this AI model's risk.\"" },
+            { "name": "Composition Service", "detail": "Assembles multi-source context into one response.", "example": "Merges vendor risk + data inventory + policy graph into one context object." },
+            { "name": "Freshness & Versioning", "detail": "Point-in-time context snapshots.", "example": "Returns the context as it existed at the moment an assessment was submitted." },
+            { "name": "Access Control Layer", "detail": "Scopes context by caller, tenant, and purpose.", "example": "Hides another business unit's vendor data from a tenant-scoped caller." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l4b",
+      "number": "4B",
+      "owner": "AEP",
+      "title": "AEP Decision & Intelligence Layer",
+      "description": "Where governed context becomes an explainable decision. Every action traceable end to end: assess, act, attest.",
+      "modules": [
+        {
+          "name": "Reasoning & Recommendations",
+          "tagline": "Explainable, IDS-structured logic",
+          "components": [
+            { "name": "Reasoning Engine", "detail": "Applies IDS-structured logic to assembled context.", "example": "Concludes a vendor needs re-assessment given a new subprocessor and an expired SOC 2." },
+            { "name": "Recommendation Generator", "detail": "Synthesizes next-best-action candidates.", "example": "Suggests \"request updated DPA\" and \"flag for legal review\" for a vendor." },
+            { "name": "Ranking & Prioritization", "detail": "Orders candidates by expected value/risk.", "example": "Surfaces the 5 highest-risk AI systems awaiting assessment first." }
+          ]
+        },
+        {
+          "name": "Agent Orchestration & Runtime",
+          "tagline": "Governed agent execution",
+          "components": [
+            { "name": "Task Planner", "detail": "Decomposes a goal into ordered agent steps.", "example": "Breaks \"onboard this vendor\" into inventory check, risk scan, then DPA request." },
+            { "name": "Agent Runtime", "detail": "Governed sandbox for agent execution.", "example": "Runs the onboarding agent with read-only access until a human approves writes." },
+            { "name": "Tool / Skill Registry", "detail": "Catalog of actions an agent may invoke.", "example": "Lists \"send assessment,\" \"update risk score,\" \"create task\" as callable tools." },
+            { "name": "Human-in-the-Loop Gate", "detail": "Routes high-risk actions for approval.", "example": "Holds an auto-generated policy exception for a compliance officer to sign off." }
+          ]
+        },
+        {
+          "name": "Decision Provenance / Trace",
+          "tagline": "Assess → Act → Attest, full audit",
+          "components": [
+            { "name": "Assess Log", "detail": "What context and rules were evaluated.", "example": "Logs which policy clauses and risk factors were checked for a given decision." },
+            { "name": "Act Log", "detail": "What action was taken and by what trigger.", "example": "Records that a vendor was auto-suspended after a failed evidence deadline." },
+            { "name": "Attest Log", "detail": "Signed record of the full decision chain.", "example": "Produces an auditor-ready record of how a risk score was reached." },
+            { "name": "Context Trace Viewer", "detail": "Human-readable replay of a decision.", "example": "Lets a reviewer step through why an AI system was flagged high-risk." }
+          ]
+        },
+        {
+          "name": "Model / LLM Gateway",
+          "tagline": "Routing, evaluation, guardrails",
+          "components": [
+            { "name": "Model Router", "detail": "Selects model/provider per request profile.", "example": "Routes a sensitive PII-review task to an approved, audited model only." },
+            { "name": "Prompt & Guardrail Enforcement", "detail": "Applies policy constraints pre/post-call.", "example": "Blocks a prompt that would leak another tenant's assessment data." },
+            { "name": "Response Validator", "detail": "Checks output against expected schema/policy.", "example": "Rejects a model response that omits a required risk-justification field." }
+          ]
+        },
+        {
+          "name": "Scoring & Risk Engine",
+          "tagline": "Online + offline signal fusion",
+          "components": [
+            { "name": "Online Signal Processor", "detail": "Real-time event-driven scoring inputs.", "example": "Reacts within minutes to a breach-notification webhook from a vendor." },
+            { "name": "Offline Feature Fusion", "detail": "Governed batch features from the catalog.", "example": "Pulls last quarter's audit findings as a scoring feature." },
+            { "name": "Composite Score Calculator", "detail": "Combines online + offline into one score.", "example": "Blends a live incident signal with historical audit score into one risk rating." }
+          ]
+        },
+        {
+          "name": "Feedback & Outcome Loop",
+          "tagline": "Accepted/declined → model tuning",
+          "components": [
+            { "name": "Outcome Capture", "detail": "Records accepted / declined / expired outcomes.", "example": "Notes that a compliance officer declined the \"auto-suspend vendor\" suggestion." },
+            { "name": "Model Tuning Pipeline", "detail": "Feeds outcomes back into scoring/reasoning.", "example": "Down-weights a signal that reviewers consistently override." },
+            { "name": "Drift Monitor", "detail": "Flags degrading recommendation quality.", "example": "Alerts when acceptance rate for a recommendation type drops below threshold." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l5a",
+      "number": "5A",
+      "owner": "CPS",
+      "title": "CPS Existing Core Platform",
+      "description": "The multi-tenant substrate already in production.",
+      "modules": ["Tenant", "Users & RBAC", "Workflow Runtime", "Configuration", "API Gateway", "Connectors", "Search", "Notifications"]
+    },
+    {
+      "id": "l5b",
+      "number": "5B",
+      "owner": "AEP",
+      "title": "AEP Platform Extensions",
+      "description": "Extends the core platform with what AI-native solutions need: retrieval, memory, agents, and observability, all governed.",
+      "modules": [
+        {
+          "name": "Enterprise Intelligence",
+          "components": [
+            { "name": "Insight Aggregator", "detail": "Rolls up cross-domain findings into summaries.", "example": "Produces a weekly \"top 10 emerging vendor risks\" digest for leadership." },
+            { "name": "Alerting Service", "detail": "Notifies on emerging risk or opportunity patterns.", "example": "Pages the compliance team when 3+ vendors miss the same control in a month." }
+          ]
+        },
+        {
+          "name": "Vector / Embedding Svc",
+          "components": [
+            { "name": "Embedding Generator", "detail": "Produces vector representations of content.", "example": "Embeds every policy clause so it can be matched to relevant assessments." },
+            { "name": "Vector Index Manager", "detail": "Maintains searchable embedding indices.", "example": "Keeps the regulation-text index current as new clauses are published." }
+          ]
+        },
+        {
+          "name": "RAG Pipeline",
+          "components": [
+            { "name": "Retriever", "detail": "Fetches relevant context/documents for a query.", "example": "Pulls the 3 most relevant DPA clauses for a vendor risk question." },
+            { "name": "Augmentation Assembler", "detail": "Merges retrieved content into the model prompt.", "example": "Adds the retrieved clauses to the prompt before generating a risk summary." }
+          ]
+        },
+        {
+          "name": "Evaluation Harness",
+          "components": [
+            { "name": "Offline Eval Suite", "detail": "Benchmark tests run pre-deployment.", "example": "Checks a new reasoning model against 200 labeled risk-assessment cases." },
+            { "name": "Online Eval Monitor", "detail": "Live quality sampling in production.", "example": "Spot-checks 1 in 20 live recommendations against reviewer judgment." }
+          ]
+        },
+        {
+          "name": "Guardrails",
+          "components": [
+            { "name": "Policy Rule Engine", "detail": "Encodes allowed/blocked behaviors.", "example": "Blocks any agent action that would auto-approve a vendor above risk threshold." },
+            { "name": "Content Safety Filter", "detail": "Screens inputs and outputs for violations.", "example": "Strips PII from a response before it's logged or displayed." }
+          ]
+        },
+        {
+          "name": "Agent Framework / MCP",
+          "components": [
+            { "name": "MCP Server Interface", "detail": "Exposes tools/context to agents via MCP.", "example": "Lets a third-party agent call \"get vendor risk\" through a governed MCP tool." },
+            { "name": "Agent SDK", "detail": "Common libraries for building governed agents.", "example": "Gives engineers a standard pattern for building a new assessment agent." }
+          ]
+        },
+        {
+          "name": "Memory",
+          "components": [
+            { "name": "Short-Term Memory Store", "detail": "Session-scoped working context.", "example": "Remembers the vendor being discussed across a multi-turn conversation." },
+            { "name": "Long-Term Memory Store", "detail": "Persisted, retrievable interaction history.", "example": "Recalls that this vendor was flagged for the same issue 6 months ago." }
+          ]
+        },
+        {
+          "name": "AI Observability",
+          "components": [
+            { "name": "Telemetry Collector", "detail": "Captures latency, cost, and usage metrics.", "example": "Tracks per-model token cost across all AI governance workflows." },
+            { "name": "Trace & Debug Console", "detail": "Inspects individual model/agent calls.", "example": "Lets an engineer replay the exact prompt that produced a bad recommendation." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l6",
+      "number": "6",
+      "owner": "Dual",
+      "title": "Dual Shared Data & Knowledge Platform",
+      "description": "The shared substrate both organizations read and write.",
+      "modules": ["Catalog & Metadata", "Lakehouse", "Event Store", "Graph DB", "Vector DB", "Feature Store"]
+    },
+    {
+      "id": "l7",
+      "number": "7",
+      "owner": "Dual",
+      "title": "Dual Cloud & Platform Foundation",
+      "description": "The infrastructure layer everything else runs on.",
+      "modules": ["Kubernetes", "GPU / Compute", "Kafka / Event Bus", "Storage", "Security & IAM", "Observability"]
+    }
+  ],
+  "bridgeCrosswalk": {
+    "eyebrow": "How this maps to Sriram's marketecture",
+    "heading": "Marketecture → functional architecture → capability",
+    "description": "A direct crosswalk from Sriram's product language to the engineering layer that implements it, to the customer outcome it enables. Same system, three vantage points.",
+    "rows": [
+      { "marketecture": "Ecosystem & Partners — govern Data, Code, Agents", "functional": "1. CPS Enterprise Solutions", "capability": "Govern first-party and partner data, code, and agents under one policy set" },
+      { "marketecture": "Solution wedges — AI Governance (now); Risk & Compliance, Privacy, Consent (next)", "functional": "1. CPS Enterprise Solutions (sequenced rollout)", "capability": "Adopt AI governance now, then extend to adjacent domains without re-platforming" },
+      { "marketecture": "Developer Surface + Third-Party Node Marketplace", "functional": "2. CPS Experience & Developer Surface", "capability": "Let partners build and publish governance extensions on a common surface" },
+      { "marketecture": "MCP Core Services — Skills, Auth, Workflow, Integrations, Reports & Analytics", "functional": "3. Dual Enterprise Capability Facade", "capability": "Consistent identity, workflow, and reporting behavior across every solution" },
+      { "marketecture": "Trust Node — Runtime & Detection", "functional": "4B. AEP Decision & Intelligence — Model/LLM Gateway, Guardrails", "capability": "Detect AI risk events in real time and enforce policy at the point of use" },
+      { "marketecture": "EDISON — detect() / assess() / act() / attest()", "functional": "4B. AEP Decision & Intelligence — Reasoning & Recommendations, Decision Provenance", "capability": "Explainable, auditable AI decisions: every action traceable end to end" },
+      { "marketecture": "The Trust Graph — obligations, policy, inventory, consent, identity, data, purpose, controls", "functional": "4A. AEP Enterprise Context Layer — Knowledge Graph, Policy/Trust Graph", "capability": "Answer cross-regulation impact questions in one query instead of a manual audit" },
+      { "marketecture": "Network Intelligence — Risk Replay", "functional": "4B. AEP Decision & Intelligence — Feedback & Outcome Loop", "capability": "Continuously improve risk detection using real outcomes as the training signal" },
+      { "marketecture": "Marketplace / Partner / Acquire", "functional": "2. CPS Experience & Developer Surface — Marketplace & Partner Apps", "capability": "Extend platform value through partner and acquired capabilities without rework" },
+      { "marketecture": "AI Platform (the foundation) — solutions mount via open APIs", "functional": "3. Dual Enterprise Capability Facade + 5B. AEP Platform Extensions", "capability": "New solutions ship faster by building on a stable, reusable foundation" }
+    ]
+  },
+  "workSample": {
+    "eyebrow": "Illustrative work sample",
+    "heading": "Asset Intelligence (Stealth Mode): the same architecture discipline, shipped",
+    "description": "Asset Intelligence is a production system scoring media assets against brand, brief, and provenance requirements: five scorers, a compliance engine, chain-of-custody tracking. It shows the same architecture pattern proposed for OneTrust's Context Layer, already built and running: a foundation-model API called through typed, structured tool contracts rather than free text, an orchestrator that selects and sequences scorers, and a closed evaluation loop.",
+    "evolutionNote": "The two diagrams below chart the same evolution the OneTrust proposal is built on: from siloed trained models, to a single general-purpose model called directly, to an orchestrator with retrieval and closed-loop evaluation around it. This is the architecture pattern behind Reasoning & Recommendations, Agent Orchestration, and the Feedback & Outcome Loop layers above."
+  }
+}
