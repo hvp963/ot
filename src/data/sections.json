@@ -44,7 +44,7 @@
       }
     ],
     "governanceGraph": {
-      "heading": "Forward architecture: a governance graph",
+      "heading": "What the platform looks like at scale",
       "description": "Customers, data assets, AI models, policies, risk classifications, regulations, and third parties as one connected graph. Every entity governed, every relationship traceable. This is the structural idea behind the Context Layer detailed in the technical architecture section.",
       "outcomes": ["Cross-entity risk tracing", "Regulatory exposure mapping", "AI impact visibility", "Executive-level reporting"]
     }

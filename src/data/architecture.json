@@ -254,7 +254,7 @@
     }
   ],
   "bridgeCrosswalk": {
-    "eyebrow": "How this maps to Sriram's marketecture",
+    "eyebrow": "Where this lines up with Sriram's marketecture",
     "heading": "Marketecture → functional architecture → capability",
     "description": "A direct crosswalk from Sriram's product language to the engineering layer that implements it, to the customer outcome it enables. Same system, three vantage points.",
     "rows": [
