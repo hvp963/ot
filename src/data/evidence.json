@@ -38,14 +38,27 @@
     "narrative": "The core engineering problem was building deterministic control layers over a probabilistic AI system: multimodal generation and voice synthesis needed enterprise-grade consistency at production reliability. The result was a production system trusted to run at scale with predictable behavior, plus an internal Engineering OS pairing engineers with AI agents on a shared, governed workflow."
   },
   "whitePaper": {
-    "title": "AI-IDS: an Intrusion Detection System pattern for AI-native platforms",
-    "venue": "In submission to arXiv (Cornell)",
-    "summary": "The paper formalizes a pattern for governing AI systems the way network security governs infrastructure: explicit, versioned specifications for what an AI task is allowed to do, deterministic harness code that enforces those boundaries, and continuous detection of behavior that drifts outside them. It treats AI governance as an architectural property enforced in code at deployment time.",
-    "relevance": "Directly applicable to OneTrust's AI Governance wedge: the same discipline that keeps an AI-native platform's own agents auditable is the discipline the platform needs to sell to customers governing their AI systems."
+    "title": "AI-IDS: the Artificial Intelligence Instruction Design Set",
+    "author": "Haresh V. Parekh",
+    "venue": "Proposed arXiv categories: cs.AI, cs.CL, cs.SE",
+    "summary": "AI-IDS treats writing AI system instructions as a systems engineering discipline rather than prompt craft: eleven sections with defined semantics, a fixed execution order, and explicit precedence rules, applied the same way regardless of model. A controlled evaluation on a production media-retrieval task, 9 articles and 161 sentences across 25 repeated rounds, backs the framework: a composite consistency score of 0.360 against 0.124 for an unstructured baseline (+23.6 percentage points), a 0% operational error rate across all 25 rounds versus 2.2% for the baseline, and a drop from 17.1 to 4.1 iterations needed to reach production-grade output. A 9-configuration ablation across two model families confirmed the gain holds under every runtime setting tested, separate from decoding controls like temperature. The underlying keyword-generation system this evaluation is grounded in has run in production across 400,000+ video productions and 7.2 million+ keywords generated.",
+    "stats": [
+      { "label": "Consistency gain", "value": "+23.6pp" },
+      { "label": "Operational error rate", "value": "0%" },
+      { "label": "Iterations to production-grade output", "value": "17.1 → 4.1" },
+      { "label": "Keywords relevance generated", "value": "7.2M+" }
+    ],
+    "relevance": "Directly applicable to OneTrust's AI Governance wedge: the same structural discipline that keeps an AI-native platform's own agents consistent and auditable is the discipline the platform needs to sell to customers governing their AI systems."
   },
   "engineeringOS": {
     "title": "Engineering OS",
-    "summary": "A published set of engineering standards and Claude Code skills covering architecture principles, coding standards, API and database design, security, observability, testing, and documentation. Applied consistently across every project referenced in this app, including this one.",
+    "summary": "A layered standards framework covering product, data, and AI engineering under one set of principles: meta for navigating and maintaining the OS, macro for 12 non-negotiable principles and 11 quality attributes, meso for 14 domain design guides spanning API design, data strategy, database design, observability, security, testing, deployment, documentation, design systems, code conventions, team practices, the AI-IDS framework, and prose style, and micro for the implementation standards, templates, and review artifacts engineers use day to day. A 25-skill adapter sits on top for Claude Code, routing to the right domain guide at the right point in a build rather than introducing a second standard.",
+    "stats": [
+      { "label": "Governed layers", "value": "4" },
+      { "label": "Source documents", "value": "32" },
+      { "label": "Claude Code skills", "value": "25" },
+      { "label": "Domain design guides", "value": "14" }
+    ],
     "relevance": "Demonstrates the operating discipline behind the build claims in this app: every project bootstraps against the same checkpoint table, so architecture decisions are enforced at the moment code is written."
   },
   "profile": {

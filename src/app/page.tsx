@@ -114,7 +114,14 @@ export default function HomePage() {
             <FileText size={18} className="c-primary shrink-0" />
             <span className="font-semibold c-text">{whitePaper.title}</span>
           </div>
-          <div className="text-base c-dim mb-3">{whitePaper.venue}</div>
+          <div className="grid grid-cols-2 gap-3 mb-4">
+            {whitePaper.stats.map((s) => (
+              <div key={s.label} className="card p-3">
+                <div className="stat-number c-primary">{s.value}</div>
+                <div className="text-base c-muted mt-1">{s.label}</div>
+              </div>
+            ))}
+          </div>
           <p className="text-base c-muted mb-3">{whitePaper.summary}</p>
           <p className="text-base c-text">{whitePaper.relevance}</p>
         </div>
@@ -123,6 +130,14 @@ export default function HomePage() {
           <div className="flex items-center gap-2 mb-3">
             <Boxes size={18} className="c-primary shrink-0" />
             <span className="font-semibold c-text">{engineeringOS.title}</span>
+          </div>
+          <div className="grid grid-cols-2 gap-3 mb-4">
+            {engineeringOS.stats.map((s) => (
+              <div key={s.label} className="card p-3">
+                <div className="stat-number c-primary">{s.value}</div>
+                <div className="text-base c-muted mt-1">{s.label}</div>
+              </div>
+            ))}
           </div>
           <p className="text-base c-muted mb-3">{engineeringOS.summary}</p>
           <p className="text-base c-text">{engineeringOS.relevance}</p>
