@@ -1,7 +1,7 @@
 {
   "intro": {
     "eyebrow": "Technical architecture",
-    "heading": "From marketecture to running system",
+    "heading": "From an idea to running system",
     "paragraphs": [
       "OneTrust's AI Governance wedge, as Sriram has framed it, is Platform + Solutions: detect(), assess(), act(), attest() running on a Trust Graph. The documents below are one engineer's answer to a specific question: what does that actually take to build, layer by layer, from the customer-facing surface down to the cloud foundation.",
       "The functional architecture is OneTrust-specific, built from the high level discussion that Sriram has presented. The technical architecture is a work sample: Asset Intelligence, a production system built on the same architectural pattern this proposal is built on."
