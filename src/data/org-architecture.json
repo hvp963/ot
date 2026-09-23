@@ -1,0 +1,74 @@
+{
+  "hero": {
+    "eyebrow": "Organization architecture",
+    "heading": "Organization architecture to complement company and product architecture",
+    "lede": "What has actually worked building teams from zero to one, and the org shape that follows from it."
+  },
+  "intro": {
+    "eyebrow": "Point of view",
+    "heading": "A third architecture: who owns the other two",
+    "paragraphs": [
+      "OneTrust has a company architecture, CPS and AEP, and a technical architecture, the seven layers in this proposal. Both need an org built for them, not assigned after the fact."
+    ]
+  },
+  "flows": [
+    { "title": "Building the next business", "steps": ["Ideation", "Product", "AEP", "Customer Validation", "Scale", "Evolution"] },
+    { "title": "Growing the current business", "steps": ["Ideation", "Product", "CPS + AEP", "Customer Validation", "Scale"] }
+  ],
+  "orgChart": {
+    "eyebrow": "Build and grow, zero to one",
+    "heading": "One structure, two functions",
+    "description": "Build: 3 direct reports, 3 dotted lines in from CPS. Small enough to move fast, tethered enough to ship into production.",
+    "build": {
+      "label": "Build",
+      "sublabel": "AEP, zero to one",
+      "directReports": [
+        { "role": "Founding Engineer, Context Layer", "note": "Entity resolution, knowledge graph, policy graph" },
+        { "role": "Founding Engineer, Decision & Intelligence", "note": "Reasoning, agent orchestration, model gateway" },
+        { "role": "Release Engineering Lead", "note": "Owns the release gates below" }
+      ],
+      "dottedReports": [
+        { "role": "Platform Engineer", "note": "CPS substrate, API gateway" },
+        { "role": "Data Engineer", "note": "CPS lakehouse, event store" },
+        { "role": "Security Engineer", "note": "CPS identity, RBAC, audit" }
+      ]
+    },
+    "grow": {
+      "label": "Grow",
+      "sublabel": "CPS, sustain and scale",
+      "note": "Existing engineering org, unchanged. Receives finished AEP capability through the facade contract, not an unfinished experiment."
+    }
+  },
+  "releaseEngineering": {
+    "eyebrow": "Release engineering",
+    "heading": "The gate that stops vision-to-value drift",
+    "description": "Architecture without a release gate is a diagram, not a discipline. Every release checks against the contract it was designed to honor, or it doesn't ship.",
+    "gates": [
+      { "name": "Contract conformance", "detail": "Breaks the facade contract → build fails" },
+      { "name": "Schema versioning", "detail": "Breaking change → new version, never a silent rewrite" },
+      { "name": "Decision provenance", "detail": "No audit trail → doesn't ship" }
+    ]
+  },
+  "unifiedPlatform": {
+    "eyebrow": "The proposal",
+    "heading": "One unified platform, three businesses on top",
+    "description": "No architect per business. One ultra-core team owns the identity graph, policy engine, and release gates that all three run on.",
+    "businesses": ["AI Assurance", "Traditional Governance", "Consent"],
+    "platform": {
+      "label": "Unified Platform",
+      "note": "Ultra-core: architect-builders, one ownership line, one release gate"
+    }
+  },
+  "bmad": {
+    "eyebrow": "On development lifecycle",
+    "heading": "Does BMAD change how the team builds?",
+    "paragraphs": [
+      "Yes, and it's not the end state. BMAD-style structure is what closed the 4-hour to 20-minute production gap at Silver Labs: a repeatable way to turn a vague ask into a spec an agent can run.",
+      "What comes after is agentic-first, closer to Kiro: workflow adapts to the task instead of the task fitting a fixed set of stages. Sequence, not a permanent pick: structure first because it ships, then agentic-first once the platform is ready."
+    ]
+  },
+  "closing": {
+    "text": "One design, not three: Build small on the dotted line into CPS. Grow without absorbing unfinished work. Own architecture once, gate every release against it.",
+    "bold": ["Build", "Grow", "Own architecture once", "gate every release"]
+  }
+}

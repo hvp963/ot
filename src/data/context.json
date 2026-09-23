@@ -21,7 +21,7 @@
       "heading": "DV: two pillars",
       "points": [
         "Builder and solver: someone who can operate independently, with a small team, with zero friction from the broader organization.",
-        "Change agent: someone who owns architecture across the business and the control layer, gets the existing team ramped up, and shows what's actually possible, at the pace of innovation and execution.",
+        "Change agent: someone who owns architecture across the business and the control layer, gets the existing team ramped up, and shows what's possible, at the pace of innovation and execution.",
         "Wants experience and maturity: a track record of solving problems that look impossible, the ability to operate with pace and self-driven iteration, and the ability to influence and take ownership beyond a narrow lane."
       ]
     },
@@ -31,7 +31,7 @@
     "eyebrow": "Why a parallel function works",
     "heading": "No company has grown a new market without a parallel entity or team",
     "paragraphs": [
-      "Every company that has captured a genuinely new market while defending its existing one has done it the same way: a small, fast-moving team building the new thing runs alongside the organization sustaining the old one, connected but not merged. eBay building PayPal. Adobe moving from desktop software through cloud, data, and now AI. The pattern holds because the two efforts optimize for different things: the existing business for reliability and scale, the new business for speed and validated learning. Forcing one operating model to serve both slows both down.",
+      "eBay built PayPal alongside its marketplace instead of inside it. Adobe moved from desktop software through cloud, data, and now AI the same way: a small team building the new thing, connected to the core business but not merged into it. Every company that has captured a genuinely new market while defending its existing one has run that pattern, because the two efforts optimize for different things: reliability and scale for the existing business, speed and validated learning for the new one.",
       "The evidence below is two platforms built this way, at meaningful scale, with the numbers to show for it."
     ]
   }

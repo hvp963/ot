@@ -3,7 +3,7 @@
     "eyebrow": "Technical architecture",
     "heading": "From an idea to running system",
     "paragraphs": [
-      "OneTrust's AI Governance wedge, as Sriram has framed it, is Platform + Solutions: detect(), assess(), act(), attest() running on a Trust Graph. The functional architecture below is one engineer's answer to a specific question: what does that actually take to build, layer by layer, from the customer-facing surface down to the cloud foundation.",
+      "OneTrust's AI Governance wedge, as Sriram has framed it, is Platform + Solutions: detect(), assess(), act(), attest() running on a Trust Graph. The functional architecture below is one engineer's answer to a specific question: what does that take to build, layer by layer, from the customer-facing surface down to the cloud foundation.",
       "Seven layers. Two functions tagged explicitly: CPS (Core Platform & Solutions) for what exists in production today, AEP (AI Platform & Emerging Products) for what the new business builds, plus a stable facade contract where both sides meet and hand off work without either blocking the other or duplicating effort."
     ]
   },

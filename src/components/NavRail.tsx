@@ -3,12 +3,13 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Compass, Network, Award, ChevronLeft, ChevronRight } from "lucide-react";
+import { Compass, Network, Award, Building2, ChevronLeft, ChevronRight } from "lucide-react";
 
 const NAV_ITEMS = [
   { href: "/", label: "Context & Experience", icon: Compass },
   { href: "/architecture", label: "Architecture", icon: Network },
-  { href: "/references", label: "References & POV", icon: Award },
+  { href: "/references", label: "References", icon: Award },
+  { href: "/pov", label: "POV", icon: Building2 },
 ];
 
 const STORAGE_KEY = "ot-nav-collapsed";
